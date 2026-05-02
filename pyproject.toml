@@ -1,0 +1,28 @@
+[project]
+name = "certificomx"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.111",
+    "uvicorn[standard]",
+    "sqlalchemy>=2.0",
+    "asyncpg",
+    "pydantic>=2.0",
+    "pydantic-settings",
+    "typer>=0.12",
+    "rich>=13",
+    "anthropic>=0.40",
+    "ddgs>=6",
+    "httpx",
+    "python-dotenv",
+]
+
+[project.scripts]
+certificomx = "certificomx.cli:app"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
