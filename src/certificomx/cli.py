@@ -206,6 +206,13 @@ def dashboard():
 
 
 @app.command()
+def seed():
+    """Seed real Mexican certification data into the database."""
+    from .seed import run_seed
+    run_seed()
+
+
+@app.command()
 def serve(port: int = 8000, reload: bool = True):
     """Start the FastAPI server."""
     import uvicorn
